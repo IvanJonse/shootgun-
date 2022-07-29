@@ -49,11 +49,9 @@ body {
 }
 
 @media screen and (max-width: 1367px) {
-  
   .app-wrap {
     padding: 0;
   }
-
 }
 
 @media screen and (max-width: 992px) {
