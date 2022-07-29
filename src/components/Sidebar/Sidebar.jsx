@@ -13,19 +13,10 @@ export default function Sidebar() {
               <li>
                     <NavLink className={({isActive})=> isActive ? s.active__link: ''} to='/dialogs'>Message</NavLink>
               </li>
-              <li>
-                    <NavLink className={({isActive})=> isActive ? s.active__link: ''} to='/'>News</NavLink>
-              </li>
-              <li>
-                    <NavLink className={({isActive})=> isActive ? s.active__link: ''} to='/'>Music</NavLink>
-              </li>
+            
               <li>
                     <NavLink className={({isActive})=> isActive ? s.active__link: ''} to='/find-users'>Find users</NavLink>
               </li>
-              <li>
-                    <NavLink className={({isActive})=> isActive ? s.active__link: ''} to='/'>Settings</NavLink>
-              </li>
-            
         </nav>
         
     </div>
