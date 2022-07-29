@@ -1,0 +1,90 @@
+.container 
+    height: 100%
+    box-sizing: border-box
+    grid-area: n
+    background: #ffffff
+    border-radius: 4px 0 0 4px
+.SideBar
+    box-sizing: border-box
+    text-align: center
+    position: -webkit-sticky
+    position: sticky
+    z-index: 1
+    top: 30%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+.SideBar li
+    padding: 15px 10px
+    
+.SideBar a
+    display: flex
+    flex-direction: column
+    justify-content: center
+    text-decoration: none
+    font-family: 'Yomogi', cursive
+    font-weight: 900
+    letter-spacing: 1.3px
+    color: #0c0c0c
+    text-align: center
+    font-size: 22px
+    padding: 4px 6px 1px 6px
+   
+.SideBar a:hover:after
+    width: 90%
+    
+.SideBar a:after 
+    //#f66d52
+    background: linear-gradient(90deg, #1d82f5 0%, #a1263e 35%, rgba(0,212,255,1) 100%)
+    display: block
+    content: ""
+    transform: translate(0, 5px)
+    height: 2px
+    border-radius: 25px
+    width: 0%
+    -webkit-transition: width .3s ease-in-out
+    -moz--transition: width .3s ease-in-out
+    transition: width .3s ease-in-out
+    
+.SideBar .active__link
+    background: linear-gradient(40deg, rgba(0, 176, 155, .9), rgba(10, 170, 151, 0.9), rgba(6, 164, 145, 0.8), rgba(4, 150, 133, 0.9), rgba(4, 143, 127, 0.8))
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    
+.SideBar .active__link:after
+    background-color: transparent
+
+.SideBar .active__link:hover:after
+    width: 0
+   
+@media screen and (min-height: 1090px)
+    .container
+        min-height: 90vh
+
+@media screen and (min-width: 840px)
+    .SideBar .menu
+        display: none 
+
+    .MobileMenu
+        display: none
+
+
+@media screen and (max-width: 992px)
+    .container
+        display: none
+
+    .SideBar li
+     .SideBar a
+        font-size: 18px
+    
+
+@media screen and (max-height: 900px)
+    .SideBar  a
+        font-size: 19px
+
+@media screen and (max-height: 720px)
+    .SideBar li
+        padding: 5px
+    .SideBar  a
+        font-size: 16px

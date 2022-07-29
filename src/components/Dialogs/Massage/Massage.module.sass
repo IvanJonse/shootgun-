@@ -1,0 +1,85 @@
+
+    
+@mixin fade-in
+    transform: translateZ(0px)
+    animation-name: translateZ
+    animation-iteration-count: 1
+    animation-timing-function: ease-in
+    animation-duration: .24s
+
+@mixin scale
+    transform: scale(1)
+    animation-name: scale
+    animation-iteration-count: 1
+    animation-timing-function: ease-in
+    animation-duration: .24s
+
+
+.massage 
+    &__list
+        width: 75%
+        box-sizing: border-box
+        display: block
+        background: #ffffff
+        margin: 0px 14px 20px
+        padding-bottom: 20px
+        border-radius: 12px
+        position: relative
+        max-width: max-content
+        margin-left: 70px
+        @include scale
+       
+
+        &__text
+            width: 100%
+            max-width: inherit
+            box-sizing: border-box
+            text-align: left
+            font-size: 18px
+            word-break: break-all
+            padding: 12px 7px 7px 12px
+            display: flex
+            flex-direction: column-reverse
+        &__avatar
+            position: absolute
+            top: 0%
+            left: -70px
+            border-radius: 50%
+            object-fit: cover
+            max-width: 54px
+            max-height: 54px
+            min-width: 54px
+            min-height: 54px 
+            &__item
+                border-radius: 50%
+                object-fit: cover
+                max-width: 54px
+                max-height: 54px
+                min-width: 54px
+                min-height: 54px 
+    &__left
+        display: block
+        margin-left: auto
+        
+
+    
+.massage__left .massage__list__text
+    padding: 12px 7px 7px 12px
+    text-align: start
+
+@keyframes translateZ 
+
+    0% 
+        transform: translateZ(-80px)
+    
+    100% 
+        transform: translateZ(0px)
+
+
+@keyframes scale
+
+    0% 
+        transform: scale(0)
+    
+    100% 
+        transform: scale(1)

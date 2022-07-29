@@ -1,0 +1,148 @@
+.content
+    display: block
+    &__img
+        display: block
+        width: auto
+        height: 230px
+        padding: 30px 50px
+        border-radius: 14px
+        background: radial-gradient(circle, #00b09b79, #00b09bc0, #4afba9, #00b09bd0, #00b09b4c)
+        margin: 0px auto
+        opacity: .9
+        &__item
+            display: block
+            margin: auto
+            height: 230px
+            width: 100%
+            border-radius: 14px
+            max-height: 100%
+            max-width: 100%
+            object-fit: cover
+            object-position: 100%  100%
+.profileInfo
+    display: flex
+    flex-direction: column
+    justify-content: center
+    background: rgb(228, 228, 228)
+    height: auto    
+    &__wrap
+        display: block
+        padding: 30px 30px 0 30px
+    &__descr
+        width: 100%
+        box-sizing: border-box
+        display: flex
+        align-items: center
+        padding-top: 60px
+        padding-bottom: 60px
+        &__photo
+            text-decoration: none
+            display: block
+            width: 300px
+            height: 300px
+            max-width: 300px
+            min-width: 300px
+            max-height: 300px
+            min-height: 300px
+        &__img
+            display: block
+            border-radius: 17px
+            width: 300px
+            height: 300px
+            max-width: 300px
+            min-width: 300px
+            max-height: 300px
+            min-height: 300px
+            outline: none
+            text-decoration: none
+            border: none
+            -webkit-border: 0
+        &__item
+            display: flex
+            justify-content: center
+            align-items: flex-start
+            flex-direction: column
+            font-family: 'monospace', sans-serif
+            text-align: left
+            overflow-wrap: break-word
+            word-wrap: break-word
+            -webkit-hyphens: auto
+            -ms-hyphens: auto
+            hyphens: auto
+            padding-left: 30px
+            margin: 0 auto
+        &__text
+            font-size: 48px
+            font-weight: 900
+            text-transform: uppercase
+            font-family: 'Yomogi', cursive
+        &__subtext  
+            max-width: 700px
+            margin-top: 20px
+            line-height: 34px
+            text-align: left
+            font-size: 21px
+            font-weight: 700
+            font-family: 'Ubuntu' serif
+            &:last-child
+                cursor: pointer
+            &__span 
+                font-weight: 300
+                margin-left: 10px
+                color: #0e0a0a
+                font-size: 19px
+            &__def
+                color: #807f7f
+                font-family: 'Yomogi', cursive
+                font-size: 19px
+                font-weight: 300
+            &__input
+                padding: 10px
+                border: 0
+                width: 100%
+                height: 26px
+                border-radius: 7px
+                font-size: 22px
+                font-weight: 400
+                font-family: 'Ubuntu' serif
+
+.profileInfo__descr__img:not([src]) 
+    outline: none
+    text-decoration: none
+    border: none
+    -webkit-border: 0
+    display: none
+
+@media screen and (max-width: 992px) 
+
+    .content
+        margin: auto
+
+
+@media screen and (max-width: 680px) 
+
+    .profileInfo__descr__text
+        font-size: 40px
+
+    .profileInfo__descr__item
+        padding-left: 18px
+
+@media screen and (max-width: 600px) 
+
+    .profileInfo__descr
+        display: block
+        margin: 0 auto
+        &__item
+            line-height: 130px
+        &__subtext
+            line-height: 50px
+            margin: auto
+            text-align: center
+        &__photo
+            margin: auto
+        &__text
+            text-align: center
+            margin: auto
+
+    
+  

@@ -1,0 +1,184 @@
+.header
+    &__img
+        display: block
+        border-radius: 8px
+        padding: 4px
+        margin-left: -2px
+        width: 80px
+        height: 80px
+        box-shadow: rgba(0, 176, 155, .4) 5px 5px, rgba(0, 176, 155, 0.3) 10px 10px, rgba(0, 176, 155, 0.2) 15px 15px, rgba(0, 176, 155, 0.1) 20px 20px, rgba(0, 176, 155, 0.05) 25px 25px
+        &__item
+            width: 80px
+            height: 80px
+
+    &__menu 
+        display: flex
+        align-items: center
+        padding: 10px 24px 10px 10px
+        border-radius: 4px
+      
+        &__separ
+            display: inline-block
+            width: 1.7px
+            height: 36px
+            background: #1f1f1f
+            margin: 0 11px
+
+        &__list
+            gap: 10px
+            display: flex
+            align-items: center
+           
+            &__item
+                list-style: none
+                position: relative
+               
+                &__link
+                    display: flex
+                    align-items: center
+                    text-decoration: none
+                    letter-spacing: 1px
+                    font-family: 'Roboto', sans-serif
+                    color: #1f1f1f
+                    font-weight: 7n00
+                    font-size: 19px
+                    cursor: pointer
+                    gap: 10px
+                    transition: ease-in .2s
+                    &__fq
+                        font-family: 'Yomogi', cursive
+                        font-weight: 600
+                        color: #1f1f1f
+                        text-decoration: none
+                        font-size: 17px
+                    // &:hover
+                    //color: #4afba9
+                      
+                    // &__prof
+                    //     stroke: #fff
+                    //     fill: #fff
+                    //     transition: ease-in .2s
+                    //     width: 40px
+                    //     height: 40px
+                    &__avatar
+                        background: #000000
+                        border-radius: 50%
+                        display: block
+                        width: 50px
+                        height: 50px
+                        max-width: 50px
+                        min-width: 50px
+                        max-height: 50px
+                        min-height: 50px
+                        
+                        &__item
+                            border-radius: 50%
+                            width: 50px
+                            height: 50px
+                            max-width: 50px
+                            min-width: 50px
+                            max-height: 50px
+                            min-height: 50px
+                            object-fit: cover                                   
+                    &__text
+                        display: flex
+                        align-items: center
+                        transition: ease-in .2s
+                        text-decoration: none
+                                                 
+
+// .header__menu__list__item__link:hover .header__menu__list__item__link__prof
+//     stroke: #4afba9
+//     fill: #4afba9
+
+// .header__menu__list__item__link:hover .header__menu__list__item__link__text
+//     color: #4afba9
+
+
+.auth__wrap
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
+    display: flex
+    flex-direction: column
+    width: 100px
+    height: 50px
+    background: #f3f3f3
+    border-radius: 3px
+    position: absolute
+    top: 55px
+    right: 0
+    left: 0
+    margin-left: auto
+    margin-right: -16px
+    padding: 10px
+    &__active
+    &__link
+        position: relative
+        color: #000000
+        text-align: left
+        font-size: 15px
+        font-weight: 400
+        margin-bottom: 10px
+        text-decoration: none
+        &:last-child
+            margin-bottom: 0
+        
+    &__arrow
+     
+        &:after
+            content: ''
+            position: absolute
+            right: 16px
+            top: -18px
+            border: 7px solid transparent
+            border-bottom: 11px solid #f3f3f3
+
+
+.arrow
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    width: 14px
+    height: 14px
+    transform: rotate(-45deg)
+    margin-bottom: 3px
+    &:before,
+    &:after
+        content: ''
+        position: absolute
+        box-sizing: border-box
+        width: 57%
+        height: 57%
+        border-left: 1px solid #1f1f1f
+        border-bottom: 1px solid #1f1f1f
+    //     margin-top: 0px
+    //     content: ''
+    //     position: absolute
+    //     display: flex
+    //     align-items: center
+    //     border: 6px solid transparent
+    //     border-top: 10px solid #fff
+    //     transition: ease-in .2s
+
+.arrow__active
+    margin-top: 10px
+
+    transform: rotate(134deg)
+
+// .header__menu__list__item__link:hover .arrow:after
+//     border-top: 10px solid #4afba9
+
+
+@media screen and (max-width: 840px) 
+    
+    .header__menu__list
+       
+        display: flex
+        flex-direction: column-reverse
+        justify-content: center
+        gap: 0
+    .header__menu__separ
+        transform: rotate(90deg)
+        
+
+

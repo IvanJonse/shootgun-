@@ -1,0 +1,187 @@
+    
+@mixin fade-in
+    opacity: 1
+    animation-name: fade
+    animation-iteration-count: 1
+    animation-timing-function: ease-in
+    animation-duration: .6s
+    
+.users
+    background: linear-gradient(to right,  rgba(0, 176, 155, .9), rgba(74, 251, 169, .9))
+    margin: 0 auto
+    display: block
+    box-sizing: border-box
+    width: 100%
+    max-height: 85vh
+    min-height: 85vh
+    overflow-y: auto
+    position: relative
+
+
+.findUsers__content
+    box-sizing: border-box
+    padding: 20px
+    @include fade-in
+.page
+    width: 400px
+    max-width: 400px
+    height: 65px
+    font-size: 20px
+    font-weight: 400
+    color: #112
+    font-family: 'Roboto', sans-serif
+    display: flex
+    justify-content: center
+    flex-wrap: nowrap
+    align-items: center
+    margin: 20px auto
+    cursor: pointer
+    padding: 30px 5px
+    gap: 5px
+
+.itemPage
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 5px
+    max-height: 26px
+    width: max-content
+    padding: 6px 12px
+    font-size: 30px
+    font-weight: 700
+    color: rgb(56, 56, 56)
+    background: #ffffff
+    text-shadow: 0px 0px 10px 13px #222
+    transition: .2s ease-in
+    box-shadow: rgba(0, 176, 155, 40%),  0px 2px 4px, rgba(74, 251, 169, 30%) 0px 7px 13px -3px, rgba(0, 176, 155, 20%) 0px -3px 0px inset
+    &__fz
+        font-size: 22px
+    &:hover 
+        color:#ffffff
+        background: #07ff41
+
+.selectedPage 
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 5px
+    max-height: 26px
+    width: max-content
+    padding: 6px 12px
+    font-size: 30px
+    font-weight: 700
+    color: #ffffff
+    background: #07ff41
+    text-shadow: 0px 0px 10px 13px #222
+       
+.pageStep 
+    height: 43px
+    min-width: 35px
+    letter-spacing: 1px
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 0 5px
+    color: #ffffff
+    background: #414141
+    border-radius: 3px
+    border: 0
+    outline: 0
+    font-size: 27px
+    font-weight: 400
+    
+    
+.findUsers
+    margin-bottom: 35px
+    display: flex
+    justify-content: space-between
+    gap: 40px
+    border-radius: 6px
+    padding: 10px 20px
+    &__wrap
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        &__img
+            background: #ffffff
+            margin-bottom: 15px
+            border-radius: 50%
+            object-fit: cover
+            max-width: 65px
+            max-height: 65px
+            min-width: 65px
+            min-height: 65px 
+            &__item
+                border-radius: 50%
+                object-fit: cover
+                max-width: 65px
+                max-height: 65px
+                min-width: 65px
+                min-height: 65px
+        &__btn
+            &__item
+                margin-block:  auto
+                padding: 4px 7px 
+                display: block
+                font-weight: 300
+                color: #2e2e2ead 
+                width: 100px
+                height: 30px
+                border: 1px solid #ccc
+                border-radius: 3px
+                text-align: center
+    &__name
+        width: 100%
+        display: flex
+        align-items: center
+        text-align: center
+        justify-content: space-between
+        padding: 10px  20px
+        border-radius: 16px
+        border: 1px solid #ccc
+        color: #161616
+        &__item
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            overflow-wrap: break-word
+            word-wrap: break-word
+            -webkit-hyphens: auto
+            -ms-hyphens: auto
+            hyphens: auto
+            line-height: 26px
+            &__text
+                overflow-wrap: break-word
+                word-wrap: break-word
+                -webkit-hyphens: auto
+                hyphens: auto
+                max-width: 730px
+                text-align: left
+                font-family: 'monospace', sans-serif
+                &:first-child
+                    font-size: 20px
+                    font-weight: 650
+                &:nth-child(2)
+                    font-size: 18px
+                    font-weight: 400
+            &__adress
+                display: block
+                font-size: 18px
+                font-weight: 400
+                &:first-child
+                    font-size: 20px
+                    font-weight: 650
+                &:nth-child(2)
+                    text-align: start
+    
+
+        
+@keyframes fade
+
+    0% 
+        opacity: 0
+    
+    100% 
+        opacity: 1
+

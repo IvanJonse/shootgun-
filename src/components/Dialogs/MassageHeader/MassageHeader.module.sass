@@ -1,0 +1,74 @@
+.massage
+    display: flex
+    position: -webkit-sticky
+    position: sticky
+    z-index: 1
+    top: 0
+    background: linear-gradient(45deg,#04c7b0a4, #00b09bc0, #04c7b0a4, #12c6b1f6)
+
+    // background: #47e1ae
+    align-items: center
+    height: 66px
+    min-height: 66px
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+    &__header 
+        display: flex
+        width: 100%
+        align-items: center
+        padding: 0 15px
+        max-height: 66px
+        &__item
+            display: flex
+            align-items: center
+            &__img
+                object-fit: cover
+                max-width: 52px
+                max-height: 52px
+                min-width: 52px
+                min-height: 52px
+                display: block
+                border-radius: 50%
+        &__text
+            color: #ffffff
+            margin-left: 10px
+            letter-spacing: .7px
+            &__title
+                font-size: 18px
+                font-weight: 700
+            &__subtitle
+                font-size: 15px
+                font-weight: 300
+        &__menu
+            position: relative
+            cursor: pointer
+            font-weight: 900
+            font-size: 45px
+            letter-spacing: 2
+            display: flex
+            align-items: center
+            margin-left: auto
+            color: #ffffff
+            &__open
+                position: absolute
+                right: 7px
+                top: 64px
+                margin-left: auto
+                display: flex
+                flex-direction: column
+                justify-content: center
+                color: #373737
+                background: #ffffff
+                padding: 0 15px
+                height: 70px
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+                &__item
+                    text-align: left
+                    margin-bottom: 5px
+                    font-size: 14px
+                    font-weight: 500
+    &__user
+        line-height: 23px
+        display: block
+
+    &__list
+        padding-top: 100px
