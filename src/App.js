@@ -86,7 +86,7 @@ let AppContainer = connect(mapStateToProps, {initializeApp}) (App)
 
 const AppWrap = (props) => {
     return (
-    <Router basename={process.env.PUBLIC_URL}><Provider store={store}>  <AppContainer/></Provider> </Router>
+    <Router><Provider store={store}>  <AppContainer/></Provider> </Router>
     )
 }
 

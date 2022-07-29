@@ -18,7 +18,7 @@ return (
             <div className={s.profileInfo__descr}>
                 <a href='#' className={s.profileInfo__descr__photo}>
                     <img className={s.profileInfo__descr__img} 
-                        src={props.profile.photos.large !== null ? props.profile.photos.large  : user } alt="" 
+                        src={props.profile.photos.large || user } alt="" 
                     />
                 </a>
                 <Status profile={props.profile} status={props.status} updateStatus={props.updateStatus} userId={props.userId}/>
