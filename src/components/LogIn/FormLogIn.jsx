@@ -29,9 +29,7 @@ export default function FormLogIn(props) {
                         <Field validate={[ReqaredField, Length]} component={Input} name={'password'}  placeholder="Password" type={'password'}/>
                     </div>
 
-                    <div className={`${s.login__form__item} ${s.login__form__item__check}`}>
-                        {/* <Field component={'input'} id='rem' name={'rememberMe'} className={`${s.login__form__item__input} ${s.login__form__item__check}`} type="checkbox" /> */}
-                        
+                    <div className={`${s.login__form__item} ${s.login__form__item__check}`}>                        
                         <Checkbox id='rem' name={'rememberMe'} sx={{  '& .MuiSvgIcon-root': { color: '#ffffff', fontSize: 52 } }} ></Checkbox>
                         <label className={s.login__form__item__label} htmlFor='rem' >Remember me</label> 
                     </div>
