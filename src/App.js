@@ -86,7 +86,7 @@ let AppContainer = connect(mapStateToProps, {initializeApp}) (App)
 
 const AppWrap = (props) => {
     return (
-        <Provider store={store}> <Router> <AppContainer/> </Router></Provider>
+    <Router><Provider store={store}>  <AppContainer/></Provider> </Router>
     )
 }
 
