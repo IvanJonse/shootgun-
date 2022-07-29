@@ -1,5 +1,5 @@
 import  React, {Suspense} from 'react';
-import {Route, Routes, BrowserRouter as Router} from 'react-router-dom';
+import {Route, Routes, HashRouter as Router} from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import FindUsersContainer from './components/FindUsers/FindUsersContainer';
 import Home from './components/Home/Home';
