@@ -4,7 +4,6 @@ import './Header.sass';
 import HeaderMenu from './HeaderMenu';
 import { ClickAwayListener } from "@mui/material";
 
-
 export default function Header(props) {
    
    const [open, setOpen] = useState(false)
@@ -22,7 +21,7 @@ export default function Header(props) {
                            <img className='header__img__item' src={logo}/>
                         </div>
                         <div className='HeaderMenu'>
-                           <HeaderMenu {...props} />
+                           <HeaderMenu isAuth={props.isAuth} login={props.logIn} profile={props.profile} logOut={props.logOut} />
                         </div>
                   </div>
             </header>

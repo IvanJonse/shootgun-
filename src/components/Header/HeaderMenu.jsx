@@ -31,14 +31,14 @@ export default function HeaderMenu (props) {
                                 <div className='header__menu__list__item__link' onClick={() => setOpen(!open)} >
 
                                     <div className='header__menu__list__item__link__avatar'>
-                                        <img src={user} alt="" className='header__menu__list__item__link__avatar__item'/>
+                                        <img src={ props.profile.photos.small || user} alt="" className='header__menu__list__item__link__avatar__item'/>
                                     </div> 
 
                                     {props.isAuth ? 
                                         
                                     
                                     <div className='header__menu__list__item__link__text'>
-                                        {props.login}
+                                        {props.profile.fullName}
                                     </div>        
 
                                     :

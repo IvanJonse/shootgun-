@@ -26,13 +26,8 @@ useEffect(() => {
             (dialog, index) =>  <DialogItem key={index} id={dialog.id} avatar={dialog.avatar} title={dialog.name} subtitle={dialog.textMessage} time={dialog.time} count={dialog.count}/>
     )
 
-    let HeadInfo = props.dialogsPage.massagehead.map((
-                (headInfo, index) => <MassageHeader
-                key={index}
-                avatar={headInfo.avatar}
-                title={headInfo.name}
-                subtitle={headInfo.subtitle}/>
-    ))
+    let HeadInfo = <MassageHeader profile={props.profile} />
+   
 
     let MassageElem = props.dialogsPage.massage.map( (data, index) => (<Massage key={index} text={data.text} avatar={data.avatar}/>))
 
@@ -61,7 +56,6 @@ useEffect(() => {
                 {HeadInfo}
          
                 <div className={s.dialogs__ListMassage__massage} ref={divRef}>
-                    
                         {MassageElem}
                 </div>
                 

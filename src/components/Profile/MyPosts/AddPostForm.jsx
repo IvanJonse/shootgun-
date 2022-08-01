@@ -12,7 +12,7 @@ const AddPostForm = (props) => {
     return (
 
         <form onSubmit={props.handleSubmit} className={s.Posts__wrap}>
-            <Field className={s.Posts__wrap__send} rows='1' component={Textarea} name='postText' />
+            <Field className={s.Posts__wrap__send} component={Textarea} name='postText' placeholder="start to writing....."/>
             <button type="submit" disabled={invalid || pristine || submitting} className={s.Posts__btn}>Add post</button>
         </form>
     )

@@ -1,8 +1,7 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import s from './MyPosts.module.sass';
 import AddPostForm from "./AddPostForm";
 import Post from "./Post/Post";
-
 
 export default function MyPosts(props) {
 
@@ -19,7 +18,7 @@ export default function MyPosts(props) {
         <div className={s.Posts}>
             <div className={s.Posts__title}>my post</div>
             <AddPostForm postText={props.postText} onSubmit={OnAddPost} />
-            <div className={s.Post__wrap}>   
+            <div className={s.Post__wrap} >   
                 {postel}
             </div>     
 

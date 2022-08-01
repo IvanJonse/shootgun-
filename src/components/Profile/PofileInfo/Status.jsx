@@ -1,72 +1,49 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import s from './PofileInfo.module.sass'
+import StatusCommon from "./StatusCommon";
+import edit from '../../../assets/img/edit.png'
 
- function Status (props) {
-      
-    const [editMode, setEditMode] = useState(false)
-    const [status, setStatus] = useState(props.status)
+export default function Status (props) {
 
-    useEffect(  () => {
+    let arrwrap = {
 
-        setStatus(props.status) 
-
-    }, [props.status]);
-
-
-    const activeEditMode = () => setEditMode(true)
+        objData : {
     
-    const deActiveEditMode = () => {
-    setEditMode(false)
-    props.updateStatus(status)
+        arr: [
+
+            {  title: 'About me', status: props.profile.aboutMe, text: 'Here should be some about me'},
+
+            {  title: 'Job', status: props.profile.lookingForAJobDescription, text: 'Here should be some about my job' },
+
+            {  title: 'Job progress'}
+         ]
+
+        }
     }
-    const onStatusChange = (e) => setStatus(e.currentTarget.value)
-           
 
-
-        return (
-
-            <div className={s.profileInfo__descr__item}>
-                        <div className={s.profileInfo__descr__text}>
-                            {props.profile.fullName} 
-                        </div>
-                        <div className={s.profileInfo__descr__subtext}>
-                            Обо мне: 
-                                <span className={s.profileInfo__descr__subtext__span}>
-                                    {props.profile.aboutMe || <span className={s.profileInfo__descr__subtext__def}>{`<Информация отсутствует...>`}</span>} 
-                                </span> 
-                        </div>
-                        <div className={s.profileInfo__descr__subtext}>
-                            { 
-                            
-                                !editMode &&
-
-                                <>
-                                Статус работы: 
-                                    <span onClick={activeEditMode} className={s.profileInfo__descr__subtext__span}>
-                                        {props.status || <span className={s.profileInfo__descr__subtext__def}>{`<Статус не указан...>`}</span> }
-                                    </span> 
-                                </>
-
-                            }
-
-                            {
-
-                                editMode &&
-
-
-                                <>
-                                Статус работы: 
-                                    <input onChange={onStatusChange} onBlur={deActiveEditMode}
-                                     autoFocus={true} value={status}
-                                    className={s.profileInfo__descr__subtext__input}/>
-                                </>
-
-                            }
-
-                        </div>
-                </div>
-        )
+    return ( 
     
-}
+        <>  
+            { 
+                props.owner &&
+                <div className={s.profileInfo__contact__img}>
+                <img onClick={props.activeEditMode} className={s.profileInfo__contact__img__item} src={edit} alt="" />
+                </div>
+            }
 
-export default Status
+            { 
+                arrwrap.objData.arr.map( (e, item) => 
+                    <StatusCommon
+                        profile={props.profile} 
+                        a={e.a}    
+                        key={item} 
+                        title={e.title} 
+                        textJobProgress={e.textJobProgress} 
+                        status={e.status} 
+                        text={e.text}
+                    />
+                )
+            } 
+        </>  
+    )  
+}

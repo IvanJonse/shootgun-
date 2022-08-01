@@ -9,9 +9,10 @@ let mapStateToProps = (state) => {
     return {
         dialogsPage: state.dialogsPage,
         dialogText: state.dialogsPage.dialogText,
-        clear: state.dialogsPage.clear
+        clear: state.dialogsPage.clear,
+        profile: state.profilePage.profile
     }
 }
 
-export default connect(mapStateToProps, {sendMassage}) (withAuthRedirect (Dialogs))
+export default connect(mapStateToProps, {sendMassage}) (withRouter  (Dialogs))
 

@@ -15,7 +15,6 @@ export default function FormLogIn(props) {
     return (
 
         <>
-    
             <form className={s.login__form} action="" onSubmit={props.handleSubmit}>
                 
                 <div className={s.login__form__wrap}>
@@ -40,7 +39,6 @@ export default function FormLogIn(props) {
                     { props.error && <div className={s.login__form__error}>{props.error}</div>}
                 </div>
             </form>
-
         </>
         
     )

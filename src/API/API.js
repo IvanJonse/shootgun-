@@ -66,5 +66,20 @@ export const userAPI  =  {
 
         return instance.post(`follow/${u}`).then(response => response.data)
 
+    },
+
+    putFiles (file) {
+        let formData = new FormData();
+        formData.append('image', file);
+        return instance.put(`profile/photo`, formData, { headers: {
+            'Content-Type' : 'multipart/form-data'
+        }}).then(response => response.data)
+    },
+
+    saveProfile (profile) {
+
+        return instance.put(`profile`, profile)
     }
+
+
 }

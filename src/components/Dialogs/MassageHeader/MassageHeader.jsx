@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import s from './MassageHeader.module.sass';
 import menuD from "../../../assets/img/menuD.png";
 import { ClickAwayListener } from '@mui/material';
+import user from '../../../assets/img/user.jpg'
 
 export default function MassageHeader(props) {
 
@@ -13,15 +14,15 @@ export default function MassageHeader(props) {
         <ClickAwayListener onClickAway={handleClickAway}>
         <div className={s.massage}> 
             <div className = {s.massage__header}> 
-                <div className={s.massage__header__item}><img className={s.massage__header__item__img} src={props.avatar} alt=""/></div>
+                <div className={s.massage__header__item}><img className={s.massage__header__item__img} src={props.profile.photos.small || user} alt=""/></div>
                     <div className={s.massage__user}>
                         
                             <div className={s.massage__header__text}>
                                 <div className={s.massage__header__text__title}>
-                                    {props.title}
+                                    {  props.profile.fullName || 'Загрузка...' }
                                 </div>
                                 <div className={s.massage__header__text__subtitle}>
-                                    {props.subtitle} минут назад
+                                    был(ла) {props.subtitle } минут назад
                                 </div>
                             </div>
                     </div>
