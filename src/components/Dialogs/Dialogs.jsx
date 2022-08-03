@@ -5,7 +5,7 @@ import MassageHeader from "./MassageHeader/MassageHeader";
 import Massage from "./Massage/Massage";
 import fileUpload from "../../assets/img/fileUpload.png";
 import s from './Dialogs.module.sass';
-import { reduxForm, Field } from "redux-form";
+import { reduxForm, Field, resetSection } from "redux-form";
 
 export default function Dialogs(props) {
 
@@ -26,7 +26,7 @@ useEffect(() => {
             (dialog, index) =>  <DialogItem key={index} id={dialog.id} avatar={dialog.avatar} title={dialog.name} subtitle={dialog.textMessage} time={dialog.time} count={dialog.count}/>
     )
 
-    let HeadInfo = <MassageHeader profile={props.profile} />
+    let HeadInfo = <MassageHeader userIdLogin={props.userIdLogin} owner={props.owner} profile={props.profile} />
    
 
     let MassageElem = props.dialogsPage.massage.map( (data, index) => (<Massage key={index} text={data.text} avatar={data.avatar}/>))

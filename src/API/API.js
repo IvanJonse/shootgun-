@@ -6,13 +6,7 @@ const instance = axios.create({
     withCredentials: true,
     headers: {
         'API-KEY' : '9336b89b-40e6-4adb-bb78-a9a9df569a49'
-        },
-    
-    // params : {
-    //     'offset' : 'offset',
-    //     'limit' : 'limit'
-    
-    // }
+        }
 })
 
 
@@ -39,9 +33,14 @@ export const userAPI  =  {
     
     },
 
-    logIn (email, password, rememberMe = false) {
+    getCaptcha () {
+        return instance.get(`security/get-captcha-url`)
+    
+    },
 
-        return instance.post(`auth/login`, {email, password, rememberMe}).then(response => response.data)
+    logIn (email, password, rememberMe = false, captcha = null ) {
+
+        return instance.post(`auth/login`, {email, password, rememberMe, captcha}).then(response => response.data)
     
     },
 

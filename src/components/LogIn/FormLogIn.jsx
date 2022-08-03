@@ -1,6 +1,6 @@
 import React from "react";
-import s from './LogIn.module.sass'
-import {Field } from 'redux-form'
+import style from './LogIn.module.sass'
+import {Field} from 'redux-form'
 import {Checkbox} from "@mui/material";
 import { FormControll } from '../FormsComponents/FormControll';
 import { ReqaredField, MaxLength } from "../../Utils/Validators/Validators";
@@ -11,32 +11,34 @@ export default function FormLogIn(props) {
 
     const Length = MaxLength(40) 
 
-
     return (
 
         <>
-            <form className={s.login__form} action="" onSubmit={props.handleSubmit}>
+            <form className={style.login__form} action='' onSubmit={props.handleSubmit}>
                 
-                <div className={s.login__form__wrap}>
+                <div className={style.login__form__wrap}>
 
-                    <div className={s.login__form__item}>
+                    <div className={style.login__form__item}>
                         
                         <Field validate={[ReqaredField, Length]} component={Input} name={'email'}  placeholder="Email" />
                     </div>
 
-                    <div className={s.login__form__item}>
+                    <div className={style.login__form__item}>
                         <Field validate={[ReqaredField, Length]} component={Input} name={'password'}  placeholder="Password" type={'password'}/>
                     </div>
 
-                    <div className={`${s.login__form__item} ${s.login__form__item__check}`}>                        
+                    <div className={`${style.login__form__item} ${style.login__form__item__check}`}>                        
                         <Checkbox id='rem' name={'rememberMe'} sx={{  '& .MuiSvgIcon-root': { color: '#ffffff', fontSize: 52 } }} ></Checkbox>
-                        <label className={s.login__form__item__label} htmlFor='rem' >Remember me</label> 
+                        <label className={style.login__form__item__label} htmlFor='rem' >Remember me</label> 
                     </div>
-                    
-                    <div className={s.login__form__item}>
-                        <button className={s.login__form__item__btn}><span className={s.login__form__item__btn__span}>LogIn</span></button> 
+                    { props.captchaUrl && <img className={style.login__form__captchaUrl} src={props.captchaUrl} alt="" /> }    
+                    { props.captchaUrl && <Field  name="captcha" validate={[ReqaredField, Length]} component={Input} placeholder='Symbols from image' /> }
+                   
+                    <div className={style.login__form__item}>
+                        <button className={style.login__form__item__btn}><span className={style.login__form__item__btn__span}>LogIn</span></button> 
                     </div>
-                    { props.error && <div className={s.login__form__error}>{props.error}</div>}
+                        
+                    { props.error && <div className={style.login__form__error}>{props.error}</div>}
                 </div>
             </form>
         </>

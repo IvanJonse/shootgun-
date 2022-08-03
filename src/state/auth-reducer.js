@@ -3,7 +3,7 @@ import { userAPI } from '../API/API'
 
 const SET_USER_DATA = 'FOLLOW'
 
-const SEND_DATA = 'SEND_DATA'
+const GET_CAPTCHA_URL_SUSCESS = 'GET_CAPTCHA_URL_SUSCESS'
 
 let initialState = {
 
@@ -15,27 +15,27 @@ let initialState = {
 
     login: null,
 
-    isAuth: false
+    isAuth: false,
+
+    captchaUrl: null,
+
+    clear: ''
+
+
 }
+
+
 
 const authReducer  = (state = initialState, action) => {
 
     switch (action.type) {
 
         case SET_USER_DATA:
-            
-            return  {
-                ...state, 
-                ...action.data
-                
-            }
-
-
-        case SEND_DATA:
+        case GET_CAPTCHA_URL_SUSCESS:
 
             return {
                 ...state, 
-                ...action.data
+                ...action.payload
             }
 
         default: return state
@@ -43,7 +43,11 @@ const authReducer  = (state = initialState, action) => {
 }
 
 export const setAuthUserData = (login, userId, email, isAuth ) => ({
-   type: SET_USER_DATA, data: {login, userId, email, isAuth}
+   type: SET_USER_DATA, payload: {login, userId, email, isAuth}
+})
+
+export const getCaptchaUrl = (captchaUrl) => ({
+   type: GET_CAPTCHA_URL_SUSCESS, payload: {captchaUrl}
 })
 
 
@@ -57,19 +61,22 @@ export const getAuthUser = () => {
                 }
     }
 }
-
-
-export const logIn = (email, password, rememberMe) => {
+ 
+export const logIn = (email, password, rememberMe, captcha) => {
     return async (dispatch) => {
 
-       let data = await userAPI.logIn(email, password, rememberMe)
+       let data = await userAPI.logIn(email, password, rememberMe, captcha)
 
                 if (data.resultCode === 0) {
                     dispatch(getAuthUser())
                 } else {
 
+                if(data.resultCode === 10)  {
+                    dispatch(getCaptcha())
+                } 
+
                 let message = data.messages.length > 0 ? data.messages[0] : 'Some error'
-                dispatch(stopSubmit('login', {_error: message}))
+                dispatch(stopSubmit('login', {_error: message} ))
                 }
     }
 }
@@ -80,9 +87,21 @@ export const logOut = () => {
         let data = await userAPI.logOut()
                 if (data.resultCode === 0) {
                     dispatch(setAuthUserData(null, null, null, false))
+                    
                 }
     }
 }
+export const getCaptcha = () => {
+    return async (dispatch) => {
+        const response = await userAPI.getCaptcha()
+        const captchaUrl = response.data.url
+        
+        dispatch(getCaptchaUrl(captchaUrl))
+    }
+}
+
+
+
 
 
 export default authReducer;

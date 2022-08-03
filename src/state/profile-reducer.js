@@ -1,7 +1,6 @@
 import ava from '../assets/img/ava.jpg';
-import user  from '../assets/img/user.jpg';
-
 import { userAPI } from '../API/API'
+import { stopSubmit } from 'redux-form';
 
 const ADDPOST = 'ADD-POST'
 
@@ -20,8 +19,6 @@ let initialState = {
     profile: null, 
 
     status: '',
-
-    aboutMe: '',
     
     clear: ''
     
@@ -126,10 +123,10 @@ export const updateStatus = (status) => {
         if(response.data.resultCode === 0) {
             dispatch(setStatus(status))
         }
-        
     }
 }
 
+let a = []
 export const saveProfile = (profile) => {
    
     return async (dispatch, getState) => {
@@ -140,6 +137,17 @@ export const saveProfile = (profile) => {
 
         if(response.data.resultCode === 0) {
             dispatch(getUserProfile(id))
+        } else {
+            let wrongNetwork = response.data.messages[0].slice (
+                response.data.messages[0].indexOf(">") + 1,
+                response.data.messages[0].indexOf(")")
+              ).toLocaleLowerCase();
+            dispatch(
+              stopSubmit("FormEditContact", {
+                contacts: { [wrongNetwork] : response.data.messages[0] }
+              })
+            );
+            return Promise.reject(response.data.messages[0]);
         }
     }
 }

@@ -23,12 +23,16 @@ return (
     
         <div className={s.page} >
 
-        {portionNumber > 1 && 
+        { portionNumber > 1 && 
         <>
             <div onClick={() => setPortionNumber(portionNumber - 1)} className={s.pageStep}>{'<'}</div> 
             <div onClick={() => setPortionNumber(pages[0])} className={`${s.itemPage} ${s.itemPage__fz}`}>{'First'}</div>
+           
         </>
         }
+
+
+
             {pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber).map((e, index) => {
                 return (
 
@@ -39,8 +43,14 @@ return (
                 )
             })}
 
-        {portionCount > portionNumber && <div onClick={() => setPortionNumber(portionNumber + 1)}  className={s.pageStep}>{'>'}</div>}
-        
+        {portionCount > portionNumber && <div onClick={() => setPortionNumber(portionNumber + 1)} className={s.pageStep}>{'>'}</div>}
+
+        { currentPage < leftPortionPageNumber && 
+
+            <>
+            <div onClick={() => setPortionNumber(Math.ceil(currentPage/portionSize))} className={`${s.itemPage} ${s.itemPage__fz}`}>{'Current'}</div>
+            </>
+         }
         </div>
     )
 }

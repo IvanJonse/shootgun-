@@ -41,7 +41,7 @@ return (
 
                                 <label className={s.profileInfo__descr__label}>
                                     <svg className={s.profileInfo__descr__label__span}></svg>
-                                Upload photo
+                                        Upload photo
                                     <input onChange={onUpload} type="file" multiple={true} name="files" className={s.profileInfo__descr__input}/>
                                 </label>
                         } 

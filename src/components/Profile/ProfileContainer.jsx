@@ -23,6 +23,7 @@ function ProfileContainer(props) {
         props.getStatus(userId)
     }, [props.router.params.userId])
 
+    
         return (
 
             <>
@@ -44,7 +45,9 @@ function ProfileContainer(props) {
 
                 }
                 
-            </>
+            </>    
+            
+
         )
     
     }
@@ -56,5 +59,5 @@ let mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
 
 })
-   
+
 export default compose (connect(mapStateToProps, {getUserProfile, getStatus, updateStatus, putProfileFiles, setUploadFiles, saveProfile }), withAuthRedirect) (withRouter  (ProfileContainer))

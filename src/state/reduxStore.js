@@ -17,6 +17,7 @@ let reducers = combineReducers({
     form: formRedux
 })
 
+
 let store = createStore(reducers, applyMiddleware(thunkMiddleware))
 
 window.store = store
