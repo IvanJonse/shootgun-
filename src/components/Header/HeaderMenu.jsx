@@ -8,7 +8,7 @@ export default function HeaderMenu (props) {
     
     const [open, setOpen] = useState(false);
 
-    const handleClickAway = () => setOpen ();
+    const handleClickAway = () => setOpen();
 
     return (
 
@@ -37,15 +37,15 @@ export default function HeaderMenu (props) {
                                     {props.isAuth ? 
                                         
                                     
-                                    <div className='header__menu__list__item__link__text'>
-                                        {props.profile.fullName}
-                                    </div>        
+                                        <div className='header__menu__list__item__link__text'>
+                                            {props.profile.fullName}
+                                        </div>        
 
-                                    :
+                                        :
 
-                                    <div className='header__menu__list__item__link__text'>
-                                            Profile
-                                    </div> 
+                                        <div className='header__menu__list__item__link__text'>
+                                                Profile
+                                        </div> 
 
                                     }
 
