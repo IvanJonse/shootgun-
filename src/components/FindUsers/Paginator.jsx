@@ -44,13 +44,10 @@ return (
 
         {portionCount > portionNumber && <div onClick={() => setPortionNumber(portionNumber + 1)} className={s.pageStep}>{'>'}</div>}
         
-        { currentPage < leftPortionPageNumber && 
-
             <>
             <div onClick={() => setPortionNumber(Math.ceil(currentPage/portionSize))} className={`${s.itemPage} ${s.itemPage__fz}`}>{'Current'}</div>
            
             </>
-         }
         </div>
     )
 }
