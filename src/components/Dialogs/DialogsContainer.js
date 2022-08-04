@@ -38,5 +38,5 @@ let mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, {sendMassage}) (withRouter (DialogsCont))
+export default compose(connect(mapStateToProps, {sendMassage}), withAuthRedirect) (withRouter (DialogsCont))
 

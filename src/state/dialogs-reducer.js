@@ -4,8 +4,8 @@ const ADD_MASSAGE = 'ADD-MASSAGE'
 let initialState = {
 
     dialog: [
-        {  id: 1, name: 'Иван', textMessage: 'Привет, пойдешь сегодня гулять? Я уже собираюсь выходить', time: '17:00' , count: 17 },
-        {  id: 2, name: 'Андрей', textMessage: 'Вряд-ли, на улице холодно', time: '15:30', count: 168 }
+        {  id: 1, name: 'John', textMessage: 'Hi, whats up?', time: '17:00' , count: 17 },
+        {  id: 2, name: 'Bern', textMessage: 'My dad took me to the park… and I got on it and… it bent.', time: '15:30', count: 168 }
     ],
 
     massage: [

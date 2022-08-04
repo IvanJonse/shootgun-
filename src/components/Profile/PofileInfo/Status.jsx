@@ -10,16 +10,10 @@ export default function Status (props) {
         objData : {
     
         arr: [
-
             {  title: 'About me', status: props.profile.aboutMe, text: 'Here should be some about me'},
-
             {  title: 'Job', status: props.profile.lookingForAJobDescription, text: 'Here should be some about my job' },
-
             {  title: 'Job progress'}
-         ]
-
-        }
-    }
+         ]}}
 
     return ( 
     
@@ -27,7 +21,7 @@ export default function Status (props) {
             { 
                 props.owner &&
                 <div className={s.profileInfo__contact__img}>
-                <img onClick={props.activeEditMode} className={s.profileInfo__contact__img__item} src={edit} alt="" />
+                    <img onClick={props.activeEditMode} className={s.profileInfo__contact__img__item} src={edit} alt="" />
                 </div>
             }
 
@@ -43,7 +37,9 @@ export default function Status (props) {
                         text={e.text}
                     />
                 )
+                
             } 
+            
         </>  
     )  
 }

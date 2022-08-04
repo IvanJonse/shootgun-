@@ -48,19 +48,19 @@ let StatusItem = (props) => {
                                 <input onChange={onStatusChange} onBlur={deActiveEditMode}
                                 autoFocus={true} value={status}
                                 className={s.profileInfo__descr__subtext__input}/>
+                                
                             </>
                          }
                          
                     </>
                     
                 </div>
-               <div className={s.profileInfo__contact__img} > 
-               { 
-                props.owner && 
-                <img onClick={activeEditMode} className={s.profileInfo__contact__img__item}  src={edit} alt="" />
-                }
+                <div className={s.profileInfo__contact__img} > 
+                    { 
+                        props.owner && 
+                        <img onClick={activeEditMode} className={s.profileInfo__contact__img__item}  src={edit} alt="" />
+                    }
                </div>
-              
         </div>
     )
 }

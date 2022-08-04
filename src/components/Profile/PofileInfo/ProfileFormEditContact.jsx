@@ -13,13 +13,16 @@ function ProfileFormEditContact (props) {
         <form className={s.profileInfo__descr__form} action="" onSubmit={props.handleSubmit} >
             
             <div className={s.profileInfo__descr__form__wrap}>
+                    <div className={s.profileInfo__descr__subtext}>
+                            Contacts:   
+                    </div>  
                 {
                 Object.keys(props.pfofile).map( (e, item) => ( 
                         
                 <div key={item}> 
-                 
-                    {e + ':'} 
-                    
+                
+                  {e + ':'}
+                  
                     <span className={s.profileInfo__descr__subtext__span}>
                         <Field placeholder={`example: https://${e}.com`} className={s.profileInfo__descr__form__input} component={Input} name={'contacts.' +  e.toLocaleLowerCase()}/>
                     </span> 

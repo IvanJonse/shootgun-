@@ -1,6 +1,5 @@
 import React from "react";
 import s from './PofileInfo.module.sass'
-import edit from '../../../assets/img/edit.png'
 
 let StatusCommon = (props) => {
 

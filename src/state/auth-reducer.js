@@ -64,11 +64,11 @@ const resetAuthDataAC = () => {
 
 export const getAuthUser = () => {
    return async (dispatch) => {
-             let data = await userAPI.authUsers()
-                if (data.resultCode === 0) {
-                    let {login, id, email} = data.data
-                    dispatch(setAuthUserData(login, id, email, true))
-                }
+        let data = await userAPI.authUsers()
+            if (data.resultCode === 0) {
+                let {login, id, email} = data.data
+                dispatch(setAuthUserData(login, id, email, true))
+            }
     }
 }
  
@@ -96,9 +96,9 @@ export const logIn = (email, password, rememberMe, captcha) => {
 export const logOut = () => {
     return async (dispatch) => {
         let data = await userAPI.logOut()
-                if (data.resultCode === 0) {
-                    dispatch(resetAuthDataAC())
-                }
+            if (data.resultCode === 0) {
+                dispatch(resetAuthDataAC())
+            }
     }
 }
 
