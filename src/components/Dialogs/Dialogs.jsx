@@ -16,11 +16,17 @@ useEffect(() => {
         divRef.current.addEventListener('DOMNodeInserted', event => {
         const { currentTarget: target } = event;
         target.scroll({ top: target.scrollHeight, behavior: 'auto' });
-      },  () => divRef.current.removeEventListener('DOMNodeInserted'))}
-    
-  },[])
+      })} 
+  } ,[])
 
- 
+  useEffect(()=> {
+
+        divRef.current.removeEventListener('DOMNodeInserted', event => {
+        const { currentTarget: target } = event;
+        target.scroll({ top: target.scrollHeight, behavior: 'auto' });
+
+      })
+  }, [])
 
     let DialogElem = props.dialogsPage.dialog.map(
             (dialog, index) =>  <DialogItem key={index} id={dialog.id} avatar={dialog.avatar} title={dialog.name} subtitle={dialog.textMessage} time={dialog.time} count={dialog.count}/>
@@ -51,11 +57,11 @@ useEffect(() => {
                     {DialogElem}
                 
             </div>
-            <div className={s.dialogs__ListMassage} ref={divRef}>
+            <div className={s.dialogs__ListMassage}>
 
                 {HeadInfo}
          
-                <div className={s.dialogs__ListMassage__massage}>
+                <div className={s.dialogs__ListMassage__massage} ref={divRef}>
                         {MassageElem}
                 </div>
                 
