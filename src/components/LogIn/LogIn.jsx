@@ -13,7 +13,7 @@ const LoginReduxform = reduxForm ({
 const LogIn = (props) => {
   
 const onSubmit = (formData) => {
-    props.logIn(formData.email, formData.password, formData.rememberMe, formData.captcha)
+    props.logIn(formData.email, formData.password, formData.captcha)
     
 }
 
@@ -27,7 +27,7 @@ if (props.isAuth) {
 
             <div className={s.login__title}>LogIn</div>
        
-            <LoginReduxform  captchaUrl={props.captchaUrl} onSubmit={onSubmit} rememberMe={props.rememberMe} />
+            <LoginReduxform  captchaUrl={props.captchaUrl} onSubmit={onSubmit} />
 
         </div>    
     )
@@ -36,7 +36,6 @@ if (props.isAuth) {
 
 let mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
-    rememberMe: state.auth.rememberMe,
     captchaUrl: state.auth.captchaUrl,
     clear: state.auth.clear
 

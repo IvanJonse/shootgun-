@@ -20,8 +20,6 @@ let initialState = {
     captchaUrl: null,
 
     clear: ''
-
-
 }
 
 
