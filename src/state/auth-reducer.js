@@ -3,6 +3,8 @@ import { userAPI } from '../API/API'
 
 const SET_USER_DATA = 'FOLLOW'
 
+const RESET_USER_AUTH_DATA = 'RESET_USER_AUTH_DATA'
+
 const GET_CAPTCHA_URL_SUSCESS = 'GET_CAPTCHA_URL_SUSCESS'
 
 let initialState = {
@@ -36,6 +38,12 @@ const authReducer  = (state = initialState, action) => {
                 ...action.payload
             }
 
+        case RESET_USER_AUTH_DATA:
+            return {
+                ...state,
+                ...initialState
+            }
+
         default: return state
     }
 }
@@ -48,10 +56,14 @@ export const getCaptchaUrl = (captchaUrl) => ({
    type: GET_CAPTCHA_URL_SUSCESS, payload: {captchaUrl}
 })
 
+const resetAuthDataAC = () => {
+    return { type: RESET_USER_AUTH_DATA }
+  }
+  
+
 
 export const getAuthUser = () => {
    return async (dispatch) => {
-    // return
              let data = await userAPI.authUsers()
                 if (data.resultCode === 0) {
                     let {login, id, email} = data.data
@@ -60,6 +72,8 @@ export const getAuthUser = () => {
     }
 }
  
+
+
 export const logIn = (email, password, rememberMe, captcha) => {
     return async (dispatch) => {
 
@@ -79,16 +93,15 @@ export const logIn = (email, password, rememberMe, captcha) => {
     }
 }
 
-
 export const logOut = () => {
     return async (dispatch) => {
         let data = await userAPI.logOut()
                 if (data.resultCode === 0) {
-                    dispatch(setAuthUserData(null, null, null, false))
-                    
+                    dispatch(resetAuthDataAC())
                 }
     }
 }
+
 export const getCaptcha = () => {
     return async (dispatch) => {
         const response = await userAPI.getCaptcha()
