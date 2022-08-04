@@ -11,23 +11,19 @@ export default function Header(props) {
    const handleClickAway = () => setOpen (false)
 
     return (
-       
       
          <ClickAwayListener onClickAway={handleClickAway}>
-
             <header className='header'> 
                   <div className='header__wrap'>
                         <div className='header__img'>
                            <img className='header__img__item' src={logo}/>
                         </div>
-                        <div className='HeaderMenu'>
+                        <div className='HeaderMenu' onClick={()=> open}>
                            <HeaderMenu isAuth={props.isAuth} login={props.logIn} profile={props.profile} logOut={props.logOut} />
                         </div>
                   </div>
             </header>
-            
          </ClickAwayListener>
-     
     )
 
 }

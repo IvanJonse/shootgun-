@@ -1,24 +1,24 @@
-import React, { useRef, useEffect} from "react";
+import React from "react";
 import send from '../../assets/img/send.png'
 import DialogItem from "./DialogItem/DialogItem";
 import MassageHeader from "./MassageHeader/MassageHeader";
 import Massage from "./Massage/Massage";
 import fileUpload from "../../assets/img/fileUpload.png";
 import s from './Dialogs.module.sass';
-import { reduxForm, Field, resetSection } from "redux-form";
+import { reduxForm, Field} from "redux-form";
 
 export default function Dialogs(props) {
 
-    const divRef = useRef(null)
+//     const divRef = useRef(null)
 
-useEffect(() => {
-    if (divRef) {
-        divRef.current.addEventListener('DOMNodeInserted', event => {
-        const { currentTarget: target } = event;
-        target.scroll({ top: target.scrollHeight, behavior: 'auto' });
-      },  () => divRef.current.removeEventListener('DOMNodeInserted'))}
+// useEffect(() => {
+//     if (divRef) {
+//         divRef.current.addEventListener('DOMNodeInserted', event => {
+//         const { currentTarget: target } = event;
+//         target.scroll({ top: target.scrollHeight, behavior: 'auto' });
+//       },  () => divRef.current.removeEventListener('DOMNodeInserted'))}
     
-  },[])
+//   },[])
 
  
 
@@ -55,7 +55,7 @@ useEffect(() => {
 
                 {HeadInfo}
          
-                <div className={s.dialogs__ListMassage__massage} ref={divRef}>
+                <div className={s.dialogs__ListMassage__massage}>
                         {MassageElem}
                 </div>
                 

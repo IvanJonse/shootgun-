@@ -17,7 +17,6 @@ class FindUserContainer extends React.Component {
         this.props.setCurrentPage(pageNumber )
         let {pageSize} = this.props
         this.props.getUsers(pageNumber, pageSize)
-        
     }
 
     render() {
