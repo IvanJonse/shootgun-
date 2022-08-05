@@ -19,7 +19,7 @@ return (
             />
 
         <div className={s.content__info} >
-                <MyPostsContainer />
+                <MyPostsContainer profile={props.profile} />
         </div>
     </div>
 

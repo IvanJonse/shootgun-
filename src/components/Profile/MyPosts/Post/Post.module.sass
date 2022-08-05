@@ -2,40 +2,49 @@
     margin-top: 50px
     display: flex
     flex-direction: column
-    text-align: start
+    text-align: center
+    align-items: center
+    width: auto
     &__drscr
         display: flex
         align-items: center
         gap: 10px
         &__item
-            max-width: 700px
-            display: block        
+            display: block   
+            &__avatar 
+                display: flex
+                align-items: center
+            &__massage
+                min-width: 10%
+                display: flex
+                margin: 30px auto 30px auto
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px
+                background: #ffffff
+                border-radius: 20px
             &__img
-                width: 45px
-                height: 45px
-                border-radius: 30px
+                min-width: 145px
+                height: 145px
                 object-fit: cover
             &__title 
                 margin-left: 15px
-                font-size: 26px
-                color: #222222
+                font-size: 36px
+                color: #ffffff
+                letter-spacing: .8px
                 font-weight: 700
-            &__text 
-                
-                font-family: 'monospace', sans-serif
+            &__text
+                color: #222222 
                 word-break: break-all
                 overflow-wrap: break-word
                 text-align: left   
                 -ms-hyphens: auto
                 -webkit-hyphens: auto
                 hyphens: auto
-                margin-top: 8px
                 display: flex
                 gap: 10px
-                font-size: 21px
-                font-weight: 500
-
-            &__like 
+                font-size: 20px
+                font-weight: 400
+                padding: 20px
+            &__like
                 display: flex
                 gap: 10px
             &__dislike 
