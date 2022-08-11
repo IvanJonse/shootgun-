@@ -6,10 +6,7 @@ import { withAuthRedirect } from './../Hoc/withAuthRedirect';
 import { compose } from 'redux';
 import { withRouter } from '../withRouter/withRouter';
 
-
-function DialogsCont(props) {
-    
-    
+function DialogsContainer(props) {
 
     return (
         <Dialogs 
@@ -18,13 +15,9 @@ function DialogsCont(props) {
         dialogText={props.dialogText} 
         clear={props.clear} 
         sendMassage={props.sendMassage} 
-        owner={props.router.params.userId}
-        userIdLogin={props.userIdLogin}
         />
         
     )
-
-
 }
 
 let mapStateToProps = (state) => {
@@ -38,5 +31,5 @@ let mapStateToProps = (state) => {
 }
 
 
-export default compose(connect(mapStateToProps, {sendMassage}), withAuthRedirect) (withRouter (DialogsCont))
+export default connect(mapStateToProps, {sendMassage} )   (withAuthRedirect(DialogsContainer))
 

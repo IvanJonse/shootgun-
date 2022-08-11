@@ -6,7 +6,6 @@ import HeaderMenu from './HeaderMenu';
 export default function Header(props) {
 
     return (
-      
         
             <header className='header'> 
                   <div className='header__wrap'>

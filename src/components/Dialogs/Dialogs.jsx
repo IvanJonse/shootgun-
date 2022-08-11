@@ -3,7 +3,7 @@ import send from '../../assets/img/send.png'
 import DialogItem from "./DialogItem/DialogItem";
 import MassageHeader from "./MassageHeader/MassageHeader";
 import Massage from "./Massage/Massage";
-import fileUpload from "../../assets/img/fileUpload.png";
+// import fileUpload from "../../assets/img/fileUpload.png";
 import s from './Dialogs.module.sass';
 import { reduxForm, Field} from "redux-form";
 
@@ -32,7 +32,7 @@ useEffect(() => {
             (dialog, index) =>  <DialogItem key={index} id={dialog.id} avatar={dialog.avatar} title={dialog.name} subtitle={dialog.textMessage} time={dialog.time} count={dialog.count}/>
     )
 
-    let HeadInfo = <MassageHeader userIdLogin={props.userIdLogin} owner={props.owner} profile={props.profile} />
+    let HeadInfo = <MassageHeader profile={props.profile} />
    
 
     let MassageElem = props.dialogsPage.massage.map( (data, index) => (<Massage key={index} text={data.text} avatar={data.avatar}/>))
@@ -82,7 +82,7 @@ const SendMassage = (props) => {
     return (
 
         <form onSubmit={props.handleSubmit} className={s.massage__send__item}>
-            <label className={s.massage__send__label}>
+            {/* <label className={s.massage__send__label}>
                 <img style={{'maxWidth' : '30px', 'minWidth' : '30px', 'height' : '30px'}} src={fileUpload} alt="" />
                 <Field
                     component='input'
@@ -90,7 +90,7 @@ const SendMassage = (props) => {
                     type="file"
                     multiple={true}
                     name="files"/>
-            </label>
+            </label> */}
             <Field 
                 component='textarea'
                 name="dialogText"

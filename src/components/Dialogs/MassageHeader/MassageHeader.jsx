@@ -14,12 +14,12 @@ export default function MassageHeader(props) {
         <ClickAwayListener onClickAway={handleClickAway}>
         <div className={s.massage}> 
             <div className = {s.massage__header}> 
-                <div className={s.massage__header__item}><img className={s.massage__header__item__img} src={ props.profile === null ?  user : props.profile.photos.small || user } alt=""/></div>
+                <div className={s.massage__header__item}><img className={s.massage__header__item__img} src={ user } alt=""/></div>
                     <div className={s.massage__user}>
                         
                             <div className={s.massage__header__text}>
                                 <div className={s.massage__header__text__title}>
-                                    {/* {  props.profile.fullName || 'Загрузка...' } */}
+                                   John lookas {/* {  props.profile.fullName || 'Загрузка...' } */}
                                 </div>
                                 <div className={s.massage__header__text__subtitle}>
                                     был(ла) {props.subtitle } минут назад

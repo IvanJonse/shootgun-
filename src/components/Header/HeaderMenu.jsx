@@ -59,13 +59,13 @@ export default function HeaderMenu (props) {
 
                                         <div className='auth__wrap__arrow'></div>
 
-                                        {props.isAuth ? 
+                                        { props.isAuth ? 
 
                                             <>
                                             
-                                            <NavLink className='auth__wrap__link' to='/'>Account</NavLink>
-                                                
-                                             <div className='auth__wrap__link' onClick={ props.logOut }>Log out</div> 
+                                                <div className='auth__wrap__link' >Account</div>
+                                                    
+                                                <div className='auth__wrap__link' onClick={ props.logOut }>Log out</div> 
                                                  
                                             </>
                                                
@@ -73,12 +73,12 @@ export default function HeaderMenu (props) {
 
                                             <>       
                                                 
-                                             <NavLink className='auth__wrap__link' to='/'>Log in</NavLink>
+                                                <NavLink className='auth__wrap__link' to='/'>Log in</NavLink>
 
-                                             <NavLink className='auth__wrap__link' to='/login'>Sign up</NavLink>     
-                                             
-                                             </>   
-                                            }                                                     
+                                                <NavLink className='auth__wrap__link' to='/login'>Sign up</NavLink>     
+                                                
+                                            </>   
+                                        }                                                     
                                     </div>
                                                            
                                 }
