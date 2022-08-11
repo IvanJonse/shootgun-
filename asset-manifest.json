@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/shootgun-/static/css/main.9ac88c4b.css",
+    "main.css": "/shootgun-/static/css/main.a0ce23a1.css",
     "main.js": "/shootgun-/static/js/main.d6fc46b8.js",
     "static/css/889.99856ac9.chunk.css": "/shootgun-/static/css/889.99856ac9.chunk.css",
     "static/js/889.a21e5e6b.chunk.js": "/shootgun-/static/js/889.a21e5e6b.chunk.js",
@@ -22,7 +22,7 @@
     "static/media/send.png": "/shootgun-/static/media/send.78aa2abe35f7c70ce0d4.png",
     "static/media/logo.svg": "/shootgun-/static/media/logo.e5625a824311873855222ecc9c9a7477.svg",
     "index.html": "/shootgun-/index.html",
-    "main.9ac88c4b.css.map": "/shootgun-/static/css/main.9ac88c4b.css.map",
+    "main.a0ce23a1.css.map": "/shootgun-/static/css/main.a0ce23a1.css.map",
     "main.d6fc46b8.js.map": "/shootgun-/static/js/main.d6fc46b8.js.map",
     "889.99856ac9.chunk.css.map": "/shootgun-/static/css/889.99856ac9.chunk.css.map",
     "889.a21e5e6b.chunk.js.map": "/shootgun-/static/js/889.a21e5e6b.chunk.js.map",
@@ -37,7 +37,7 @@
     "986.ec9dd4bc.chunk.js.map": "/shootgun-/static/js/986.ec9dd4bc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ac88c4b.css",
+    "static/css/main.a0ce23a1.css",
     "static/js/main.d6fc46b8.js"
   ]
 }
