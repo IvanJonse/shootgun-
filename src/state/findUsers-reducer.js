@@ -98,8 +98,6 @@ export const unfollowSuccess = (userId) => ({
  export const setCurrentPage = (currentPage) => ({
     type: SET_CURRENTPAGE, currentPage
  })
- 
- 
 
 export const setTotalUsersCount = (count) => ({
     type: SET_TOTAL_ITEMS_COUNT, count

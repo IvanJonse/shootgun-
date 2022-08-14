@@ -92,7 +92,6 @@ export const putProfileFiles = (file) => {
     }
 }
 
-
  export const getUserProfile = (u) => {
 
     return async (dispatch) => {
@@ -100,6 +99,7 @@ export const putProfileFiles = (file) => {
       let response = await userAPI.getProfile(u)
 
         dispatch(setUserProfile(response.data))
+        
     }
 }
 

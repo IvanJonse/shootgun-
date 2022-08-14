@@ -9,9 +9,9 @@ export default function FindUsers (props) {
 return (
 
     <div className={s.users}>      
-       <Paginator onPageChanged={props.onPageChanged} totalItemsCount={props.totalItemsCount} 
+       <Paginator onPageChanged={props.onPageChanged} 
                     pageSize={props.pageSize} 
-                    currentPage={props.currentPage}  />
+          />
      {  
         !props.isFetching ?  
 

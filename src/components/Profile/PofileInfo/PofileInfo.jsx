@@ -48,7 +48,7 @@ return (
 
                     </div>  
 
-                    <ProfileDescr {...props}/>
+                
                         
                 </div>   
             </div> 
