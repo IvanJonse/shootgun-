@@ -29,7 +29,6 @@ function ProfileContainer(props) {
             <>
             
                 { props.profile ?
-                    
                         <Profile {...props} 
                         owner={!props.router.params.userId}
                         profile={props.profile} 
