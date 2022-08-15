@@ -3,15 +3,22 @@ import s from './FindUsers.module.sass';
 import PreloaderUsers from '../Preloader/PreloaderUsers';
 import Paginator from './Paginator';
 import UserItem from './UserItem';
+debugger
 
 export default function FindUsers (props) {
-    
+    debugger
+
 return (
 
     <div className={s.users}>      
-       <Paginator onPageChanged={props.onPageChanged} 
-                    pageSize={props.pageSize} 
-          />
+       <Paginator 
+            onPageChanged={props.onPageChanged} 
+            currentPage={props.currentPage}
+            totalItemsCount={props.totalItemsCount} 
+            pageSize={props.pageSize} 
+
+        />
+          
      {  
         !props.isFetching ?  
 

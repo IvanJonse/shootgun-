@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import s from './FindUsers.module.sass';
 
 export default function Paginator ({onPageChanged, totalItemsCount, pageSize, currentPage, portionSize = 4}) {
-
     let pagesCount = Math.ceil(totalItemsCount / pageSize) 
  
     let pages = [];
